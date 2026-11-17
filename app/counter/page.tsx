@@ -5,11 +5,10 @@ import { useState } from "react";
 function CountButton({ increment, backgroundColor }) {
   const [count, setCount] = useState(0);
 
-  
   function incrementCount() {
     setCount((previous) => {
       const next = previous + increment;
-      return next;
+      return next > 10 ? 0 : next;
     });
   }
 
@@ -31,8 +30,8 @@ export default function Page() {
   return (
     <main>
       <h1>Counters</h1>
-      <CountButton increment={1} backgroundColor="#1d4ed6" />
-      <CountButton increment={2} backgroundColor="#166531" />
+      <CountButton increment={1} backgroundColor="#1d4ed8" />
+      <CountButton increment={2} backgroundColor="#166534" />
     </main>
   );
 }
